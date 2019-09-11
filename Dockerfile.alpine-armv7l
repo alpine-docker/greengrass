@@ -2,7 +2,8 @@
 FROM balenalib/armv7hf-alpine-python:latest-3.9
 
 # Set ENV_VAR for Greengrass RC to be untarred inside Docker Image
-ARG GREENGRASS_RELEASE_URL=https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/1.9.2/greengrass-linux-armv7l-1.9.2.tar.gz
+ARG VERSION=1.9.2
+ARG GREENGRASS_RELEASE_URL=https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/${VERSION}/greengrass-linux-armv7l-${VERSION}.tar.gz
 
 # Install Greengrass Core Dependencies
 RUN apk add --no-cache tar gzip wget xz shadow libc6-compat ca-certificates iproute2 python && \

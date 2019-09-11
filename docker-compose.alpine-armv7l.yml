@@ -5,9 +5,9 @@ services:
     init: true
     build:
       context: .
-      dockerfile: Dockerfile.alpine-armv7hf
+      dockerfile: Dockerfile.alpine-armv7l
     container_name: aws-iot-greengrass
-    image: alpine/greengrass:1.9.2-armv7hf
+    image: alpine/greengrass:1.9.2-armv7l
     volumes:
       - ./certs:/greengrass/certs
       - ./config:/greengrass/config
