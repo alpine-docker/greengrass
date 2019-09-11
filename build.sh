@@ -18,6 +18,7 @@ sudo chmod +x /usr/bin/docker-compose
 case ${arch} in
   amazonlinux )
     COMPOSE="docker-compose.yml"
+    image="amazonlinux/greengrass:${version}"
     ;;
   x86_64 )
     COMPOSE="docker-compose.alpine-x86_64.yml"
@@ -43,5 +44,5 @@ docker run ${image} uname -m
 # push image
 if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  echo docker push ${image}
+  docker push ${image}
 fi
