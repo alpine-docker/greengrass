@@ -19,7 +19,7 @@ script:
   - ./build.sh ${arch} 1.9.2
 
 env:
-  arch=x86_64
-  arch=armv7l
-  arch=aarch64
-  arch=amazonlinux
+  - arch=x86_64
+  - arch=armv7l
+  - arch=aarch64
+  - arch=amazonlinux
