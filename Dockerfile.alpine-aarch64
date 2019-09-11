@@ -1,4 +1,5 @@
-FROM arm64v8/alpine:3.9
+#FROM arm64v8/alpine:3.9
+FROM balenalib/aarch64-alpine-python:latest-3.9
 
 # Set ENV_VAR for Greengrass RC to be untarred inside Docker Image
 ARG GREENGRASS_RELEASE_URL=https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/1.9.2/greengrass-linux-aarch64-1.9.2.tar.gz
