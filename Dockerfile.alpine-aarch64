@@ -6,7 +6,7 @@ ARG VERSION=1.9.2
 ARG GREENGRASS_RELEASE_URL=https://d1onfpft10uf5o.cloudfront.net/greengrass-core/downloads/${VERSION}/greengrass-linux-aarch64-${VERSION}.tar.gz
 
 # Install Greengrass Core Dependencies
-RUN apk add --no-cache tar gzip wget xz shadow libc6-compat ca-certificates iproute2 python && \
+RUN apk add --update --no-cache tar gzip wget xz shadow libc6-compat ca-certificates iproute2 python && \
     wget $GREENGRASS_RELEASE_URL && \
     apk del wget
 
