@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile.alpine-x86_64
     container_name: aws-iot-greengrass
-    image: x86_64/aws-iot-greengrass:1.9.2
+    image: alpine/greengrass:1.9.2-x86_64
     volumes:
       - ./certs:/greengrass/certs
       - ./config:/greengrass/config
