@@ -9,6 +9,11 @@ arch=${1}
 version=${2}
 image="alpine/greengrass:${version}-${arch}"
 
+# install latest docker-compose
+curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
 case ${arch} in
   amazonlinux )
     COMPOSE="docker-compose.yml"
@@ -36,6 +41,6 @@ docker run ${image} uname -m
 
 # push image
 if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-  docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+  docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   echo docker push ${image}
 fi
